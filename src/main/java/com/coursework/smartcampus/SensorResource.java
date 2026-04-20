@@ -1,8 +1,10 @@
 package com.coursework.smartcampus;
 
+import com.coursework.smartcampus.exception.LinkedResourceNotFoundException;
 import com.coursework.smartcampus.model.Room;
 import com.coursework.smartcampus.model.Sensor;
 import com.coursework.smartcampus.repository.DataStore;
+import com.coursework.smartcampus.exception.LinkedResourceNotFoundException;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -22,9 +24,9 @@ public class SensorResource {
         Room room = DataStore.rooms.get(sensor.getRoomId());
 
         if (room == null) {
-            return Response.status(422)
-                    .entity("Room does not exist")
-                    .build();
+            throw new LinkedResourceNotFoundException(
+                    "Referenced room does not exist"
+            );
         }
 
         DataStore.sensors.put(sensor.getId(), sensor);
