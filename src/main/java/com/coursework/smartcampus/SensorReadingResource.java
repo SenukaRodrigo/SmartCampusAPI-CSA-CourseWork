@@ -1,8 +1,10 @@
 package com.coursework.smartcampus;
 
+import com.coursework.smartcampus.exception.SensorUnavailableException;
 import com.coursework.smartcampus.model.Sensor;
 import com.coursework.smartcampus.model.SensorReading;
 import com.coursework.smartcampus.repository.DataStore;
+import com.coursework.smartcampus.exception.SensorUnavailableException;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -34,11 +36,10 @@ public class SensorReadingResource {
     public Response addReading(SensorReading reading) {
 
         Sensor sensor = DataStore.sensors.get(sensorId);
-
-        if (sensor == null) {
-            return Response.status(404)
-                    .entity("Sensor not found")
-                    .build();
+        if ("MAINTENANCE".equalsIgnoreCase(sensor.getStatus())) {
+            throw new SensorUnavailableException(
+                    "Sensor is under maintenance and cannot accept readings"
+            );
         }
 
         List<SensorReading> list =
