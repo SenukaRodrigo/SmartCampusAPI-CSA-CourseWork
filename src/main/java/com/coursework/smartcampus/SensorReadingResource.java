@@ -4,7 +4,6 @@ import com.coursework.smartcampus.exception.SensorUnavailableException;
 import com.coursework.smartcampus.model.Sensor;
 import com.coursework.smartcampus.model.SensorReading;
 import com.coursework.smartcampus.repository.DataStore;
-import com.coursework.smartcampus.exception.SensorUnavailableException;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;

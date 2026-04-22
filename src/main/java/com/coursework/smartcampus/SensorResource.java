@@ -4,7 +4,6 @@ import com.coursework.smartcampus.exception.LinkedResourceNotFoundException;
 import com.coursework.smartcampus.model.Room;
 import com.coursework.smartcampus.model.Sensor;
 import com.coursework.smartcampus.repository.DataStore;
-import com.coursework.smartcampus.exception.LinkedResourceNotFoundException;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
