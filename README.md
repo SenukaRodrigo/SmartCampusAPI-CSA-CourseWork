@@ -18,7 +18,7 @@ W2120474
 
 ## Project Overview
 
-The project is a RESTful web service written in **Java, Maven and JAX-RS (Jersey).
+The project is a RESTful web service written in \*\*Java, Maven and JAX-RS (Jersey).
 
 The API is a simulation of a university Smart Campus system, which handles:
 
@@ -53,7 +53,6 @@ Main.java
 Server starts at:
 
 http://localhost:8080/api/v1/
-
 
 ---
 
@@ -103,6 +102,10 @@ Gets API metadata and resource links.
 
 /api/v1/sensors
 
+### GET sensor by id
+
+/api/v1/sensors/{id}
+
 ---
 
 ## Sensor Readings
@@ -125,7 +128,7 @@ curl http://localhost:8080/api/v1/
 
 ## 2. Create Room
 
-curl -X POST localhost:8080/api/v1/rooms.
+curl -X POST localhost:8080/api/v1/rooms
 -H "Content-Type: application/json" \
 -d "{\"id\":\"LAB-101\",\"name\":\"Engineering Lab\",\"capacity\":30}"
 
@@ -135,13 +138,13 @@ curl http://localhost:8080/api/v1/rooms
 
 ## 4. Create Sensor
 
-The command looks like: curl -X POST http://localhost:8080/api/v1/sensors.
+The command looks like: curl -X POST http://localhost:8080/api/v1/sensors
 -H "Content-Type: application/json" \
 -d "{\"id\":\"CO2-001\",\"type\":\"CO2\",\"status\":\"ACTIVE\",\"currentValue\":400,\"roomId\":\"LAB-101\"}"
 
 ## 5. Add Reading
 
-curl -X POST localhost:8080/api/v1/sensors/CO2-001/readings.
+curl -X POST localhost:8080/api/v1/sensors/CO2-001/readings
 -H "Content-Type: application/json" \
 -d "{\"id\":\"R1\",\"timestamp\":1713620000,\"value\":420}"
 
@@ -171,24 +174,24 @@ Fallback exception mapper of the world.
 
 All requests received:
 
-* HTTP method
-* URI
+- HTTP method
+- URI
 
 Log of all outgoing responses:
 
-* Final status code
+- Final status code
 
 ---
 
 ## REST Features Demonstrated
 
-* Resource-based URI design
-* Proper HTTP verbs
-* JSON media types
-* Query parameters
-* Nested sub-resources
-* Exception mappers
-* Stateless communication
+- Resource-based URI design
+- Proper HTTP verbs
+- JSON media types
+- Query parameters
+- Nested sub-resources
+- Exception mappers
+- Stateless communication
 
 ---
 
