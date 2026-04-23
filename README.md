@@ -1,4 +1,3 @@
-````md
 # Name: Senuka Rodrigo
 # Westminster ID: W2120474
 # IIT ID: 20231309
