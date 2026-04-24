@@ -413,10 +413,12 @@ deal with cross-cutting concerns, like logging, authentication, metrics, and aud
 across all API endpoints. Here the logging filter was introduced such that all incoming requests and
 outgoing responses are automatically logged in a single point as opposed to manually adding
 Logger.info() statements within each resource method.
+
 As an example, a filter can record the HTTP method, requested URL and response status code when
 a client requests to create a room or retrieve sensors. This prevents the repetition of the same logging
 code in different classes, all the endpoints are logged in a standard format and the resource classes
 can only be involved in their business logic like creating a room or controlling sensors.
+
 The filter automatically applies as the API expands and additional endpoints are introduced,
 simplifying the overall maintenance of the system, increasing scalability, and improving structure via
 separation of concerns.
